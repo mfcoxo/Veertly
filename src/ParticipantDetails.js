@@ -17,6 +17,7 @@ const ParticipantDetails = ({
   email,
   jobTitle,
   company,
+  id,
 }) => {
   const [open, setOpen] = React.useState(false);
 
@@ -53,6 +54,7 @@ const ParticipantDetails = ({
               <li>{email}</li>
               <li>{jobTitle}</li>
               <li>{company}</li>
+              <li>{id}</li>
             </ul>
           </List>
         </DialogContent>

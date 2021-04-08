@@ -4,8 +4,13 @@ import _ from "lodash";
 import { GetParticipantList } from "./redux/actions";
 import ParticipantDetails from "./ParticipantDetails";
 import Loading from "./components/loading/Loading";
-// import PaginationClass from "./pagination";
+import Chip from "./components/Chip/Chip";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Container from "@material-ui/core/Container";
+import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
 
+// import PaginationClass from "./pagination";
 
 const ParticipiantList = () => {
   const dispatch = useDispatch();
@@ -26,7 +31,7 @@ const ParticipiantList = () => {
     if (participantList.loading) {
       return (
         <div>
-          <Loading/>
+          <Loading />
         </div>
       );
     }
@@ -34,20 +39,24 @@ const ParticipiantList = () => {
     if (!_.isEmpty(participantList.data)) {
       return (
         <div>
-          <h1>
-          </h1>
           {participantList.data.map((participant) => (
             <div>
-              <p key={participant.id}>
-                {participant.firstName} {participant.lastName}
-              </p>
-              <ParticipantDetails
-              firstName={participant.firstName} 
-              lastName={participant.lastName} 
-              email={participant.email}
-              jobTitle={participant.jobTitle}
-              company={participant.company}
-               />
+              <Container maxWidth="md">
+                <Paper id="job-container" elevation={3}>
+                  <p key={participant.id}>
+                    {participant.firstName} {participant.lastName}
+                  </p>
+                  <Chip props={participant.company} />
+                  <ParticipantDetails
+                    firstName={participant.firstName}
+                    lastName={participant.lastName}
+                    email={participant.email}
+                    jobTitle={participant.jobTitle}
+                    company={participant.company}
+                    id={participant.id}
+                  />
+                </Paper>
+              </Container>
             </div>
           ))}
           {/* <PaginationClass/> */}
@@ -56,11 +65,7 @@ const ParticipiantList = () => {
     }
   };
 
-  return (
-    <div>
-      {ShowData()}
-    </div>
-  );
+  return <div>{ShowData()}</div>;
 };
 
 export default ParticipiantList;
