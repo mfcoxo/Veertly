@@ -13,7 +13,6 @@ const ParticipiantList = () => {
 
   const [offset, setOffset] = useState(0);
 
-  console.log("OFFSET", offset);
   const FetchData = (offset) => {
     dispatch(GetParticipantList(offset));
   };

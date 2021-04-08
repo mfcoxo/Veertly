@@ -21,9 +21,7 @@ export const GetParticipantList = (offset) => async (dispatch) => {
 
     const result = await axios.get(Url);
     const participants = result.data;
-      console.log('1', participants);
     dispatch(ParticipantListSuccess(participants));
-    console.log('2', participants);
   } catch (e) {
     dispatch(ParticipantListFailure(e));
   }
