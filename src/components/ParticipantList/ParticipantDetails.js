@@ -6,6 +6,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import List from "@material-ui/core/List";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Slide from "@material-ui/core/Slide";
+import Chip from "../Chip/Chip"
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -48,13 +49,12 @@ const ParticipantDetails = ({
         <DialogContent>
           <List id="alert-dialog-slide-description">
             <ul>
-              <li>
-                {firstName} {lastName}
+              <li>Name:  {firstName} {lastName}
               </li>
-              <li>{email}</li>
-              <li>{jobTitle}</li>
-              <li>{company}</li>
-              <li>{id}</li>
+              <li> Email: {email}</li>
+              <li> Job Title: {jobTitle}</li>
+              <li> Company: {company}</li>
+              <li> Employee ID: {id}</li>
             </ul>
           </List>
         </DialogContent>
