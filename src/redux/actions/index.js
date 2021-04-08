@@ -29,30 +29,3 @@ export const GetParticipantList = (offset) => async (dispatch) => {
   }
 
 };
-
-export const ParticipantLoading = () => ({
-  type: "PARTICIPANT_LOADING",
-});
-
-export const ParticipantFailure = (error) => ({
-  type: "PARTICIPANT_FAIL",
-  payload: error,
-});
-
- export const GetParticipant = (idx) => async (dispatch) => {
-   try {
-     dispatch(ParticipantLoading());
-
-     const Url = `https://us-central1-veertly-dev-8b81f.cloudfunctions.net/fetchParticipants?offset=${idx}&limit=1`;
-
-     const result = await axios.get(Url);
-
-     dispatch({
-       type: "PARTICIPANT_SUCCESS",
-       payload: result.data,
-       participantId: idx,
-     });
-   } catch (e) {
-     dispatch(ParticipantFailure(e));
-   }
- };
