@@ -21,3 +21,8 @@ const PaginationClass = () => {
 }
 
 export default PaginationClass;
+
+// To do:
+// - styling
+// - Pagination
+// - reusable components
