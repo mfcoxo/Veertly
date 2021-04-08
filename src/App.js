@@ -1,6 +1,6 @@
 import './App.css';
 import {
-  BrowserRouter as Router,
+  BrowserRouter as
   Switch,
   Route,
   Redirect,
@@ -14,7 +14,7 @@ function App() {
       <h1> VEERTLY CHALLENGE</h1>
       <Switch>
         <Route path="/" exact component={ParticipantList} />
-        <Route path="/participant/:participant" exact component={ParticipantDetails} />
+        <Route path="/:participant" exact component={ParticipantDetails} />
         <Redirect to="/" />
       </Switch>
     </div>

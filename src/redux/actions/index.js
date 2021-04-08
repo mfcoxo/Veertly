@@ -22,10 +22,13 @@ export const GetParticipantList = () => async (dispatch) => {
 
     const result = await axios.get(Url);
     const participants = result.data;
+      console.log('1', participants);
     dispatch(ParticipantListSuccess(participants));
+    console.log('2', participants);
   } catch (e) {
     dispatch(ParticipantListFailure(e));
   }
+
 };
 
 export const ParticipantLoading = () => ({
@@ -37,20 +40,20 @@ export const ParticipantFailure = (error) => ({
   payload: error,
 });
 
-export const GetParticipant = (participant) => async (dispatch) => {
-  try {
-    dispatch(ParticipantLoading());
+// export const GetParticipant = (idx) => async (dispatch) => {
+//   try {
+//     dispatch(ParticipantLoading());
 
-    const Url = `https://us-central1-veertly-dev-8b81f.cloudfunctions.net/fetchParticipants?offset=${idx}&limit=1`;
+//     const Url = `https://us-central1-veertly-dev-8b81f.cloudfunctions.net/fetchParticipants?offset=${idx}&limit=1`;
 
-    const result = await axios.get(Url);
+//     const result = await axios.get(Url);
 
-    dispatch({
-      type: "PARTICIPANT_SUCCESS",
-      payload: result.data,
-      participantId: participant,
-    });
-  } catch (e) {
-    dispatch(ParticipantFailure(e));
-  }
-};
+//     dispatch({
+//       type: "PARTICIPANT_SUCCESS",
+//       payload: result.data,
+//       participantId: idx,
+//     });
+//   } catch (e) {
+//     dispatch(ParticipantFailure(e));
+//   }
+// };
