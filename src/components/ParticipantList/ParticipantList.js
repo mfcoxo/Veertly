@@ -1,5 +1,5 @@
 import React from "react";
-import ParticipantDetails from '../../ParticipantDetails'
+import ParticipantDetails from './ParticipantDetails';
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 // import CardActions from "@material-ui/core/CardActions";
@@ -20,8 +20,7 @@ const AllParticipants = ({ participantList }) => {
   return (
     <div id="list">
       <h1>
-        Showing
-         {participantList.data.length} Participants
+        Showing {participantList.data.length} Participants
       </h1>
       <Grid container spacing={3} direction="row">
         {participantList.data.map((participant) => (

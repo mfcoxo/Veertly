@@ -6,8 +6,7 @@ import {
   Redirect,
   NavLink
 } from "react-router-dom";
-import ParticipantList from './ParticipantList';
-import ParticipantDetails from './ParticipantDetails';
+import ParticipantList from './containers/ParticipantList'
 import Nav from './components/Nav/Nav';
 
 function App() {
@@ -18,7 +17,6 @@ function App() {
         <Nav/>
       </NavLink>
         <Route path="/" exact component={ParticipantList} />
-        <Route path="/participant/:participant" exact component={ParticipantDetails} />
         <Redirect to="/" />
       </Switch>
     </div>
