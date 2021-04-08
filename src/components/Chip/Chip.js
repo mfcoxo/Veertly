@@ -1,6 +1,5 @@
 import React from "react";
 import Chip from "@material-ui/core/Chip";
-// import PropTypes from "prop-types";
 import useStyles from "./Chip.styles";
 
 const SmallChips = ({ props }) => {
@@ -14,6 +13,3 @@ const SmallChips = ({ props }) => {
 };
 export default SmallChips;
 
-// SmallChips.propTypes = {
-//   props: PropTypes.string.isRequired,
-// };

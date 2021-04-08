@@ -2,14 +2,10 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import _ from "lodash";
 import { GetParticipantList } from "../redux/actions";
-// import ParticipantDetails from "./components/ParticipantList/ParticipantDetails";
 import Loading from "../components/loading/Loading";
 import AllParticipants from "../components/ParticipantList/ParticipantList";
-// ButtonComponent from "../components/Button/Button";
-
 import Button from "@material-ui/core/Button";
 
-// import PaginationClass from "./pagination";
 
 const ParticipiantList = () => {
   const dispatch = useDispatch();
