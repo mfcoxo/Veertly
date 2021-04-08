@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import _ from "lodash";
 import { GetParticipantList } from "./redux/actions";
+import ParticipantDetails from "./ParticipantDetails";
+// import PaginationClass from "./pagination";
+
 
 const ParticipiantList = () => {
   const dispatch = useDispatch();
@@ -31,15 +34,22 @@ const ParticipiantList = () => {
       return (
         <div>
           <h1>
-            Showing
-            {participantList.data.length} participants on this page
           </h1>
           {participantList.data.map((participant) => (
-            <p key={participant.id}>
-              {participant.firstName} {participant.lastName}
-            </p>
+            <div>
+              <p key={participant.id}>
+                {participant.firstName} {participant.lastName}
+              </p>
+              <ParticipantDetails
+              firstName={participant.firstName} 
+              lastName={participant.lastName} 
+              email={participant.email}
+              jobTitle={participant.jobTitle}
+              company={participant.company}
+               />
+            </div>
           ))}
-          <p> </p>
+          {/* <PaginationClass/> */}
         </div>
       );
     }
@@ -47,7 +57,6 @@ const ParticipiantList = () => {
 
   return (
     <div>
-      <h1> This is a list of participants</h1>
       {ShowData()}
     </div>
   );

@@ -14,7 +14,7 @@ function App() {
       <h1> VEERTLY CHALLENGE</h1>
       <Switch>
         <Route path="/" exact component={ParticipantList} />
-        <Route path="/:participant" exact component={ParticipantDetails} />
+        <Route path="/participant/:participant" exact component={ParticipantDetails} />
         <Redirect to="/" />
       </Switch>
     </div>
