@@ -1,0 +1,10 @@
+import { combineReducers } from "redux";
+import ParticipantListReducer from "./ParticipantListReducer";
+import ParticipantReducer from "./ParticipantReducer";
+
+const RootReducer = combineReducers({
+  ParticipantListReducer: ParticipantListReducer,
+  ParticipantReducer: ParticipantReducer,
+});
+
+export default RootReducer;
