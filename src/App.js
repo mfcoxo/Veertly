@@ -4,15 +4,19 @@ import {
   Switch,
   Route,
   Redirect,
+  NavLink
 } from "react-router-dom";
 import ParticipantList from './ParticipantList';
 import ParticipantDetails from './ParticipantDetails';
+import Nav from './components/Nav/Nav';
 
 function App() {
   return (
     <div className="App">
-      <h1> VEERTLY CHALLENGE</h1>
       <Switch>
+      <NavLink to="/">
+        <Nav/>
+      </NavLink>
         <Route path="/" exact component={ParticipantList} />
         <Route path="/participant/:participant" exact component={ParticipantDetails} />
         <Redirect to="/" />
