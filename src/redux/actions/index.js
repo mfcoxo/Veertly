@@ -13,12 +13,11 @@ export const ParticipantListFailure = (error) => ({
   payload: error,
 });
 
-export const GetParticipantList = () => async (dispatch) => {
+export const GetParticipantList = (offset) => async (dispatch) => {
   try {
     dispatch(ParticipantListLoading());
 
-    const Url =
-      "https://us-central1-veertly-dev-8b81f.cloudfunctions.net/fetchParticipants";
+    const Url = `https://us-central1-veertly-dev-8b81f.cloudfunctions.net/fetchParticipants?offset=${offset}&limit=100`;
 
     const result = await axios.get(Url);
     const participants = result.data;
