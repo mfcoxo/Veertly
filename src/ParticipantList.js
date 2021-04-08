@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import _ from "lodash";
 import { GetParticipantList } from "./redux/actions";
 import ParticipantDetails from "./ParticipantDetails";
+import Loading from "./components/loading/Loading";
 // import PaginationClass from "./pagination";
 
 
@@ -25,7 +26,7 @@ const ParticipiantList = () => {
     if (participantList.loading) {
       return (
         <div>
-          <h1> Loading...</h1>
+          <Loading/>
         </div>
       );
     }
