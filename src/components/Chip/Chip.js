@@ -2,14 +2,13 @@ import React from "react";
 import Chip from "@material-ui/core/Chip";
 import useStyles from "./Chip.styles";
 
-const SmallChips = ({ props }) => {
+const SmallChips = ({ label, className }) => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <Chip size="small" label={props} clickable color="primary" />
+    <div className={`${className || ""} ${classes.root}`}>
+      <Chip size="small" label={label} color="primary" />
     </div>
   );
 };
 export default SmallChips;
-

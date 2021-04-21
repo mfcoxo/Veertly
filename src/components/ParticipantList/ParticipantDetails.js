@@ -6,20 +6,18 @@ import DialogContent from "@material-ui/core/DialogContent";
 import List from "@material-ui/core/List";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Slide from "@material-ui/core/Slide";
-import Chip from "../Chip/Chip"
+import PersonIcon from "@material-ui/icons/Person";
+import EmailIcon from "@material-ui/icons/Email";
+import WorkIcon from "@material-ui/icons/Work";
+import BusinessIcon from "@material-ui/icons/Business";
+import FingerprintIcon from "@material-ui/icons/Fingerprint";
+import { ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const ParticipantDetails = ({
-  firstName,
-  lastName,
-  email,
-  jobTitle,
-  company,
-  id,
-}) => {
+const ParticipantDetails = ({ firstName, lastName, email, jobTitle, company, id }) => {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -43,19 +41,43 @@ const ParticipantDetails = ({
         aria-labelledby="alert-dialog-slide-title"
         aria-describedby="alert-dialog-slide-description"
       >
-        <DialogTitle id="alert-dialog-slide-title">
-          {"Employee Details"}
-        </DialogTitle>
+        <DialogTitle id="alert-dialog-slide-title">{"Employee Details"}</DialogTitle>
         <DialogContent>
           <List id="alert-dialog-slide-description">
-            <ul>
-              <li>Name:  {firstName} {lastName}
-              </li>
-              <li> Email: {email}</li>
-              <li> Job Title: {jobTitle}</li>
-              <li> Company: {company}</li>
-              <li> Employee ID: {id}</li>
-            </ul>
+            <ListItem>
+              <ListItemIcon>
+                <PersonIcon />
+              </ListItemIcon>
+              <ListItemText primary={`${firstName} ${lastName}`} />
+            </ListItem>
+
+            <ListItem>
+              <ListItemIcon>
+                <EmailIcon />
+              </ListItemIcon>
+              <ListItemText primary={`${email}`} />
+            </ListItem>
+
+            <ListItem>
+              <ListItemIcon>
+                <WorkIcon />
+              </ListItemIcon>
+              <ListItemText primary={`${jobTitle}`} />
+            </ListItem>
+
+            <ListItem>
+              <ListItemIcon>
+                <BusinessIcon />
+              </ListItemIcon>
+              <ListItemText primary={`${company}`} />
+            </ListItem>
+
+            <ListItem>
+              <ListItemIcon>
+                <FingerprintIcon />
+              </ListItemIcon>
+              <ListItemText primary={`${id}`} />
+            </ListItem>
           </List>
         </DialogContent>
         <DialogActions>
